@@ -1,11 +1,10 @@
-body {
+.body {
     margin: 0;
     padding: 0;
-    font-size: 10em;
-    font-family: sans-serif;
-   
-
+    font-family: 'quicksand'
 }
+
+
 
 .fondo {
     position: fixed;
@@ -21,23 +20,108 @@ body {
 }
 
 .text {
-   
+    font-size: calc(2em + 3.20vw);
     font-weight: lighter;
-    position: relative;
+    color: rgb(255, 255, 255); /* Asegúrate de que el texto sea visible sobre el fondo */
+    margin: 0;
+    letter-spacing: calc(1px + 1vw);
+}
+.text1 {
+    font-size: calc(0.80em + 0.20vw);
+    font-weight: lighter;
+    color: rgb(255, 255, 255); 
+    margin: 0;
+    margin-top: -10px;
+}
+@media (max-width: 450px ) {
+    .text{
+      font-size: 3rem;
+    }
+    .text1{
+        font-size: 0.90rem;
+      }
+    
+  }
+ 
+.contenedor-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
     z-index: 1;
     text-align: center;
-    color: white; /* Asegúrate de que el texto sea visible sobre el fondo */
-    margin: 180px;
+
 
 }
 
-
-
+a.button1{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:1em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:lighter;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+    }
+    a.button1:hover{
+    color:#000000;
+    background-color:#FFFFFF;
+    text-decoration:none;
+    }
+    @media all and (max-width:30em){
+    a.button1{
+    display:block;
+    margin:0.4em auto;
+    }
+    } 
 .button-conteiner {
     z-index: 1;
     display: flex;
     position: relative;
-    margin-top: 250px;
+    margin-top: -50px;
     justify-content:center;
+ 
 }
-\
+
+@charset "utf-8";
+.tarjeta{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  width:420px;
+  border: 1px solid lightgray;
+  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+  border-radius:15px;
+  font-family: sans-serif;
+}
+.titulo{
+  font-size: 24px;
+  padding: 10px 10px 0 10px;;
+}
+.cuerpo{
+  padding: 10px;
+}
+.pie{
+  background: #6699ff;
+  border-radius:0 0 15px 15px;
+  padding: 10px;
+  text-align:center;
+}
+.pie a{
+  text-decoration: none;
+  color: white;
+}
+.pie a:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: ""
+}
