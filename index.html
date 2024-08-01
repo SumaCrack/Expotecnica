@@ -6,13 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/est_principal.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
    
-<header>
+
   <div class="fondo"></div>
    
     <div class="contenedor-text">
@@ -22,43 +22,75 @@
 
    
     <div class="button-conteiner"><a href="something" class="button1">VER MAS</a></div>
-  </header>
+  
 
     <p>¿Que encontras en la expotecnica?</p>
     
-    <div class="tarjeta">
-      <div class="titulo">Una tarjeta básica</div>
-      <div class="cuerpo">
-      <img src="/imgs/cards0-img.jpg" alt="muestra">
-         lorem ipsum
+    <div class="carta">
+      <div class="imagen_carta"> 
+        <img src="/img/robotica.jpg" alt="">
       </div>
-      <div class="pie">
-         <a href="#">Más información</a>
-      </div>
-      </div>
-
-      <div class="tarjeta">
-        <div class="titulo">Una tarjeta básica</div>
-        <div class="cuerpo">
-        <img src="/imgs/cards0-img.jpg" alt="muestra">
-           lorem ipsum
-        </div>
-        <div class="pie">
-           <a href="#">Más información</a>
-        </div>
-        </div>
-
-        <div class="tarjeta">
-          <div class="titulo">Una tarjeta básica</div>
-          <div class="cuerpo">
-          <img src="/imgs/cards0-img.jpg" alt="muestra">
-             lorem ipsum
-          </div>
+      <div class="contenido_carta">
+          <div class="titulo">Robotica</div>
+          <div class="sub-titulo">Informatica</div>
           <div class="pie">
-             <a href="#">Más información</a>
-          </div>
-          </div>
+          <p>Lorem ipsum dolor, sit amet consectetur 
+            adipisicing elit. Maxime et a dignissimos velit accusamus 
+          </p>
+        </div>
+        </div>
+      </div>
 
+      <div class="carta_contenedor">
+      <div class="carta">
+        <div class="imagen_carta"> 
+          <img src="/img/robotica.jpg" alt="">
+        </div>
+        <div class="contenido_carta">
+            <div class="titulo">Robotica</div>
+            <div class="sub-titulo">Informatica</div>
+            <div class="pie">
+            <p>Lorem ipsum dolor, sit amet consectetur 
+              adipisicing elit. Maxime et a dignissimos velit accusamus 
+            </p>
+          </div>
+          </div>
+        </div>
+    
+        <div class="carta">
+          <div class="imagen_carta"> 
+            <img src="/img/robotica.jpg" alt="">
+          </div>
+          <div class="contenido_carta">
+              <div class="titulo">Robotica</div>
+              <div class="sub-titulo">Informatica</div>
+              <div class="pie">
+              <p>Lorem ipsum dolor, sit amet consectetur 
+                adipisicing elit. Maxime et a dignissimos velit accusamus 
+              </p>
+            </div>
+            </div>
+          </div>
+        </div>  
+    
+      
+
+
+
+    
+
+      <script>
+        $('.carta').hover(function(){
+          if($(this).hasClass("active")){
+            $('.carta .pie').slideUp(function(){
+              $('.carta').removeClass("active");
+            });
+          }else{
+            $('.carta').addClass("active");
+            $('.carta .pie').stop().slideDown();
+          }
+        });
+      </script>
     <script src="http
     s://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
