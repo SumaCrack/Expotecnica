@@ -5,27 +5,39 @@
     <!-- Required meta  tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/est_principal.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-   
 
-  <div class="fondo"></div>
-   
-    <div class="contenedor-text">
-   <h1 class="text">EXPOTECNICA</h1>
-   <h2 class="text1">FORMANDO BUENOS TECNICA Y MEJORES PERSONAS</h2>
-  </div>
-
-   
-    <div class="button-conteiner"><a href="something" class="button1">VER MAS</a></div>
-  
-
-    <p>¿Que encontras en la expotecnica?</p>
     
+ <header>
+    <a href="#" class="logo">E.E.S.T.Nº1</a>
+    <a href="#" class="logo1">Escuela educacion</a>
+     <a href="#" class="logo2">secundaria tecnica Nº1</a>                         
+    <ul>
+      <li><a href="">INICIO</a></li>
+      <li><a href="">CICLO BASICO</a></li>
+      <li><a href="">CICLO SUPERIOR</a></li>
+    </ul>
+</header>
+<section class="imagen_fondo"></section>
+
+<div class="contenedor-text">
+  <h1 class="text">EXPOTÉCNICA</h1>
+  <h2 class="text1">FORMANDO BUENOS TECNICA Y MEJORES PERSONAS</h2>
+ </div>
+ <div class="button-conteiner"><a href="google.com" class="button1">VER MAS</a></div>
+
+
+<section class="cartaExpo">
+    <p class="titulo_carta">¿Que encontras en la expotecnica?</p>
+    
+    <div class="carta_contenedor">
     <div class="carta">
       <div class="imagen_carta"> 
         <img src="/img/robotica.jpg" alt="">
@@ -57,6 +69,7 @@
           </div>
         </div>
     
+        <div class="carta_contenedor">
         <div class="carta">
           <div class="imagen_carta"> 
             <img src="/img/robotica.jpg" alt="">
@@ -71,29 +84,43 @@
             </div>
             </div>
           </div>
-        </div>  
+        </div>
     
-      
+        
+        <script>
+          $(document).ready(function() {
+            let hoverTimeout; // Variable para almacenar el temporizador
+        
+            $('.carta').hover(
+              function() {
+                // Al pasar el ratón por encima, limpiar el temporizador anterior
+                clearTimeout(hoverTimeout);
+        
+                // Remover 'active' de todas las cartas y esconder el contenido adicional
+                $('.carta').removeClass('active');
+                $('.carta .pie').slideUp();
+        
+                // Establecer un temporizador para activar la tarjeta actual
+                hoverTimeout = setTimeout(() => {
+                  $(this).addClass('active');
+                  $(this).find('.pie').stop().slideDown();
+                }, 150); // Retraso de 300 ms para activar
+              },
+              function() {
+                // Al salir el ratón de la tarjeta, limpiar el temporizador anterior
+                clearTimeout(hoverTimeout);
+        
+                // Establecer un temporizador para desactivar la tarjeta actual
+                hoverTimeout = setTimeout(() => {
+                  $(this).removeClass('active');
+                  $(this).find('.pie').stop().slideUp();
+                }, 300); // Retraso de 300 ms para desactivar
+              }
+            );
+          });
+        </script>
+  </section>
 
-
-
-    
-
-      <script>
-        $('.carta').hover(function(){
-          if($(this).hasClass("active")){
-            $('.carta .pie').slideUp(function(){
-              $('.carta').removeClass("active");
-            });
-          }else{
-            $('.carta').addClass("active");
-            $('.carta .pie').stop().slideDown();
-          }
-        });
-      </script>
-    <script src="http
-    s://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
   </body>
 </html>
