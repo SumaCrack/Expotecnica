@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'quicksand';
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: #a14a4a !important;
+}
+
+html {
+background-color: #a14a4a;
+font-family: 'quicksand';
+}
+.navbar_cicloB {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: 0.6s;
+  display: flex;
+  justify-content: center; /* Centra los elementos en el navbar */
+  align-items: center;
+  padding: 5px 10px; /* Reduce el padding para que el navbar sea más compacto */
+  z-index: 1000;
+}
+
+.navbar_cicloB.sticky {
+  background: #000000;
+  transform: scaleY(1,2); /* En lugar de cambiar padding, reduce el tamaño con transform */
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Controla el ancho del contenedor principal del navbar */
+  max-width: 1200px; /* Ancho máximo para dispositivos grandes */
+  padding-left: -10;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los logos a la izquierda */
+}
+
+.logo {
+  font-weight: 700;
+  color: #FFFFFF;
+  font-size: 1.8em; /* Tamaño ajustado del título principal */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.logos-secundarios {
+  display: flex;
+  flex-direction: column;
+  margin-top: -5px; /* Ajusta el margen superior para un espaciado más compacto */
+}
+
+.logo1, .logo2 {
+  font-weight: 500;
+  font-size: 0.7em; /* Ajusta el tamaño de las fuentes secundarias */
+  color: #FFFFFF;
+  line-height: 1.2; /* Ajusta el espaciado entre las líneas de logo1 y logo2 */
+}
+
+.menu {
+  display: flex;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu ul li {
+  margin-left: 20px; /* Espaciado entre los elementos del menú */
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 1em; /* Ajusta el tamaño de fuente del menú */
+  font-weight: 500;
+  transition: 0.3s;
+}
+.contenido_titulo h1 {
+  margin-top: 100px; /* Ajusta el margen superior para que sea más razonable */
+  font-size: 100px;
+  text-align: center;
+  font-weight: 300;
+  background-color: none;
+  color: #000000; /* Establece un color de texto para asegurar la legibilidad */
+}
+
+.year-navigation {
+  display: flex;
+  justify-content: center; /* Centrar los botones */
+  gap: 12%; /* Espacio entre los botones */
+  margin-top: 8%; /* Espacio superior con respecto al encabezado */
+}
+
+.year-button {
+  width: 14rem; /* Ajusta el ancho del botón */
+  height: 12rem; /* Ajusta la altura del botón para hacerlo cuadrado */
+  background-color: #ffffff; /* Fondo blanco */
+  color: #b22222; /* Texto rojo oscuro para contrastar */
+  border: none; /* Sin bordes */
+  padding: 15px; /* Tamaño del botón ajustado */
+  font-size: 2.6rem; /* Tamaño de la fuente */
+  cursor: pointer; /* Cursor de mano para indicar interactividad */
+  transition: background-color 0.3s, transform 0.2s; /* Transición suave para el color de fondo y transformaciones */
+  display: flex; /* Flex para centrar el texto */
+  align-items: center; /* Centrar verticalmente el texto */
+  justify-content: center; /* Centrar horizontalmente el texto */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Añade una sombra para más efecto de profundidad */
+}
+
+.year-button:hover {
+  background-color: #dddddd; /* Cambio de color al pasar el ratón */
+  transform: translateY(5px); /* Movimiento hacia abajo para el efecto de hundimiento */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Reduce la sombra para el efecto de hundimiento */
+}
+
+.year-button:active {
+  transform: translateY(10px); /* Aumenta el movimiento hacia abajo cuando se hace clic */
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2); /* Ajusta la sombra para el efecto de presionado */
+}
+
+.contenido_ciclo_infoB{
+  text-align: center;
+  justify-content: center;
+  margin-top: 15%;
+}
+
+.contenido_ciclo_infoB h2{
+  font-size: 3em;
+  font-weight: lighter;
+  color: rgb(255, 255, 255); /* Asegúrate de que el texto sea visible sobre el fondo */
+  margin: 0;
+  letter-spacing: 5%;
+ margin-bottom: 3%;
+}
+
+.contenido_ciclo_infoB p{
+  font-size:1.4em;
+  font-weight: 400;
+  margin: 0;
+  margin-top: -10px;
+}
+
+.carousel {
+  width: 100%;
+  margin: 0px 0px;
+}

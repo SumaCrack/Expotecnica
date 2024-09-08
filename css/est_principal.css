@@ -1,14 +1,12 @@
-.body {
+body {
     margin: 0;
     padding: 0;
     font-family: 'quicksand';
     box-sizing: border-box;
+    overflow-x: hidden;
+    
 }
 
-html, body{
-  height: 100%;
-
-}
 
 .imagen_fondo {
     position: fixed;
@@ -22,72 +20,90 @@ html, body{
     z-index: -1;
 }
 
-.header {
+.navbar{
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
+  transition: 0.6s;
+  display: flex;
+  justify-content: center; /* Centra los elementos en el navbar */
+  align-items: center;
+  padding: 5px 10px; /* Reduce el padding para que el navbar sea más compacto */
+  z-index: 1000;
+}
+
+.navbar.sticky {
+  background: #000000;
+  transform: scaleY(1,2); /* En lugar de cambiar padding, reduce el tamaño con transform */
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: 0.6s;
-  padding: 10px 100px;
+  width: 100%; /* Controla el ancho del contenedor principal del navbar */
+  max-width: 1200px; /* Ancho máximo para dispositivos grandes */
 }
-.header, .logo, .logo1, .logo2{
-  position: fixed;
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los logos a la izquierda */
+}
+
+.logo {
   font-weight: 700;
   color: #FFFFFF;
-  text-decoration: none;
-  font-size: 1.6em;
+  font-size: 1.8em; /* Tamaño ajustado del título principal */
   text-transform: uppercase;
   letter-spacing: 2px;
-  transition: 0.6s;
 }
-.header, .logo1, .logo2{
-  position: fixed;
-  margin-top: 30px  ;
+
+.logos-secundarios {
   display: flex;
+  flex-direction: column;
+  margin-top: -5px; /* Ajusta el margen superior para un espaciado más compacto */
+}
+
+.logo1, .logo2 {
   font-weight: 500;
-  font-size: 0.8em;
+  font-size: 0.7em; /* Ajusta el tamaño de las fuentes secundarias */
   color: #FFFFFF;
-}
-.header, .logo2{
-  position: fixed;
-  margin-top: 45px  ;
-
+  line-height: 1.2; /* Ajusta el espaciado entre las líneas de logo1 y logo2 */
 }
 
-.header, ul{
-  position: fixed;
+.menu {
   display: flex;
-  justify-content: right;
-  margin: 0;
-  padding: 0;
 }
 
-.header, ul, li{
-  position: fixed;
+.menu ul {
   list-style: none;
   margin: 0;
- 
+  padding: 0;
+  display: flex;
 }
 
-.header, ul, li, a{
-position: fixed;
-  margin: 0 15px;
+.menu ul li {
+  margin-left: 20px; /* Espaciado entre los elementos del menú */
+}
+
+.menu ul li a {
   text-decoration: none;
   color: #FFFFFF;
-  letter-spacing: 1px;
+  font-size: 1em; /* Ajusta el tamaño de fuente del menú */
   font-weight: 500;
-  transition: 0.6s;
+  transition: 0.3s;
 }
-
 .text {
     font-size: calc(2em + 3.20vw);
     font-weight: lighter;
     color: rgb(255, 255, 255); /* Asegúrate de que el texto sea visible sobre el fondo */
     margin: 0;
     letter-spacing: calc(1px + 1vw);
+   
 }
 .text1 {
     font-size: calc(0.80em + 0.20vw);
@@ -112,7 +128,7 @@ position: fixed;
     align-items: center;
     justify-content: center;
     height: 90vh;
-    z-index: 1;
+   
     text-align: center;
 
 
@@ -121,7 +137,7 @@ position: fixed;
   display: flex;
   position: relative;
   justify-content:center;
-
+  bottom: 50px;
 }
 
 a.button1{
@@ -152,9 +168,9 @@ a.button1{
 
 .cartaExpo {
   position: relative;
-  z-index: 0; /* Asegura que esté debajo del header */
+  padding: 1.8%;
   margin-top: 10vh; /* Ajusta este valor según la altura del header */
-  background: #FFFFFF;
+  background: #b9b5b5;
 }
 
 .titulo_carta {
@@ -190,7 +206,7 @@ a.button1{
   width: 370px;
   display: block;
   background: white;
-  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.15);
+  box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.15);
   transition: 0.4s linear;
 }
 
@@ -246,6 +262,58 @@ a.button1{
 
 .pie {
   display: none;
+}
+
+.horario{
+  background: #9e9c9c;
+  padding: 2%;
+}
+
+.contenedor-horario { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.horario_text {
+  font-size: 150%;
+  letter-spacing: 4px;
+  margin: 0.2%;
+}
+
+.objetivo {
+  background: #f0f0f0; /* Cambié a un gris claro */
+  min-height: 50vh;
+  padding: 5%;
+}
+
+.contenido_expo {
+  margin: auto;
+  width: 80%;
+  margin-left: 0; /* Eliminar margen izquierdo */
+  padding-left: -40px; /* Reducir el relleno izquierdo */
+}
+
+.imagen_robot {
+  max-width: 640px;
+  float: right;
+  border-radius: 5px;
+  margin-right: -25%; /* Mueve la imagen 20px hacia la derecha */
+}
+
+.contenido_texto_obj {
+  color: #000000;
+  margin-left: 0; /* Eliminar margen izquierdo */
+  padding-left: 0; /* Reducir el relleno izquierdo */
+}
+.contenido_texto_obj h2 {
+  
+  font-size: 42px;
+}
+.contenido_texto_obj p {
+ font-size: 18px;
 }
 
 

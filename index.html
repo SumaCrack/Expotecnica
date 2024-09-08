@@ -15,16 +15,26 @@
   <body>
 
     
- <header>
-    <a href="#" class="logo">E.E.S.T.Nº1</a>
-    <a href="#" class="logo1">Escuela educacion</a>
-     <a href="#" class="logo2">secundaria tecnica Nº1</a>                         
-    <ul>
-      <li><a href="">INICIO</a></li>
-      <li><a href="">CICLO BASICO</a></li>
-      <li><a href="">CICLO SUPERIOR</a></li>
-    </ul>
-</header>
+    <header class="navbar">
+      <div class="navbar-container">
+          <!-- Contenedor para el logo y los subtítulos -->
+          <div class="logo-container">
+              <span class="logo">E.E.S.T 1</span>
+              <div class="logos-secundarios">
+                  <span class="logo1">Escuela educación</span>
+                  <span class="logo2">secundaria técnica Nº1</span>
+              </div>
+          </div>
+          <!-- Menú de navegación -->
+          <nav class="menu">
+              <ul>
+                  <li><a href="index.html" class="opcion">INICIO</a></li>
+                  <li><a href="ciclo_basico.html" class="opcion">CICLO BASICO</a></li>
+                  <li><a href="" class="opcion">CICLO SUPERIOR</a></li>
+              </ul>
+          </nav> 
+      </div>
+  </header>
 <section class="imagen_fondo"></section>
 
 <div class="contenedor-text">
@@ -85,9 +95,29 @@
             </div>
           </div>
         </div>
-    
-        
+      </section>
+
+      <section class="horario">
+    <div class="contenedor-horario">
+        <p class="horario_text">DE 7:30 HASTA 12:00 Y 13:00 HASTA 18:00</p>
+        <p class="horario_text">23/10 - 26/10</p>
+      </div>
+
+      </section>
+
+      <section class="objetivo">
+        <div class="contenido_expo">
+          <img class="imagen_robot" src="../img/Escuela robot.jpg" alt="">
+          <div class="contenido_texto_obj">
+          <h2>OBJETIVO DE LA EXPO</h2>
+          <p>Lorem, ipsum dolor sit amet 
+            consectetur adipisicing elit. Reprehenderit nemo error ex 
+            asperiores sed fugiat, blanditiis</p>
+          </div>
+          </div>
+      </section>
         <script>
+          //script de las cartas
           $(document).ready(function() {
             let hoverTimeout; // Variable para almacenar el temporizador
         
@@ -118,9 +148,16 @@
               }
             );
           });
+          
+          
+          
         </script>
-  </section>
-
+ <script>
+  window.addEventListener("scroll", function() {
+    var header = document.querySelector(".navbar"); // Cambiado "navbar" por ".navbar"
+    header.classList.toggle("sticky", window.scrollY > 0); // Cambiado "scrolly" por "scrollY"
+  });
+</script>
   
   </body>
 </html>
