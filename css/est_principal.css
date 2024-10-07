@@ -205,8 +205,9 @@ body {
   text-align: center;
 }
 .horario_text {
-  font-size: 40px;
+  font-size: 2.7rem;
   letter-spacing: 2px;
+  font-weight: 300;
   margin: 10px 0;
 }
 .objetivo {
@@ -217,26 +218,26 @@ body {
   display: flex;
   align-items: center;
   max-width: 2000px;
-  margin: 0 auto;
-  padding: 0 20px;
+ 
 }
 .imagen_robot  {
   width: 40%;
   border-radius: 5px;
-  margin-right: 40px;
+ margin-left: 1%;
+ margin-right: 1%;
 }
 .contenido_texto_obj {
   color: #333;
 }
 .contenido_texto_obj h2 {
-  font-size: 300%;
+  font-size: 4rem;
   text-align: center;
 }
 .contenido_texto_obj p {
   font-size: 120%;
-
+  margin-bottom: 30%;
   line-height: 1.6;
-  text-align: center;
+margin-top: 5%;
 }
 @media (max-width: 768px) {
   .contenido_expo {

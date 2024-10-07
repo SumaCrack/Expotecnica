@@ -1,104 +1,110 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cursos = document.querySelectorAll('.curso');
     const cursosLin = document.querySelectorAll('.curso_lin');
-    const proyectoDescripcion = document.querySelector('.proyecto_descripcion');
     const proyectoTitulo = document.querySelector('.proyecto_titulo');
-    const projectImages = document.querySelectorAll('.project-image');
-    const proyectosContenedor = document.querySelector('.proyectos_contenedor');
-    const scrollIndicator = document.querySelector('.scroll-indicator');
+    const proyectoDescripcion = document.querySelector('.proyecto_descripcion');
+    const projectImage = document.querySelector('.project-image');
+    const leftArrow = document.querySelector('.nav-arrow-left');
+    const rightArrow = document.querySelector('.nav-arrow-right');
 
     const proyectoData = {
-        1: {
-            titulo: "PROYECTO TITULO - Q1",
-            descripcion: "Información del proyecto Q1. Este es un proyecto innovador que combina tecnología y diseño para crear soluciones únicas."
-        },
-        2: {
-            titulo: "PROYECTO TITULO - Q2",
-            descripcion: "Información del proyecto Q2. Exploramos nuevas fronteras en el desarrollo de software y la experiencia del usuario."
-        },
-        3: {
-            titulo: "PROYECTO TITULO - Q3",
-            descripcion: "Información del proyecto Q3. Nuestro enfoque se centra en la sostenibilidad y la eficiencia energética en el mundo digital."
-        },
-        4: {
-            titulo: "PROYECTO TITULO - Q4",
-            descripcion: "Información del proyecto Q4. Cerramos el año con un proyecto revolucionario que cambiará la forma en que interactuamos con la tecnología."
-        },
+        0: [
+            {
+                titulo: "PROYECTO TITULO - 1°1 - A",
+                descripcion: "Información del proyecto 1°1 - A. Este es un proyecto innovador que combina tecnología y diseño para crear soluciones únicas.",
+            },
+            {
+                titulo: "PROYECTO TITULO - 1°1 - B",
+                descripcion: "Información del proyecto 1°1 - B. Exploramos nuevas fronteras en el desarrollo de software y la experiencia del usuario.",
+            }
+        ],
+        1: [
+            {
+                titulo: "PROYECTO TITULO - 1°2 - A",
+                descripcion: "Información del proyecto 1°2 - A. Nuestro enfoque se centra en la sostenibilidad y la eficiencia energética en el mundo digital.",
+            },
+            {
+                titulo: "PROYECTO TITULO - 1°2 - B",
+                descripcion: "Información del proyecto 1°2 - B. Cerramos el año con un proyecto revolucionario que cambiará la forma en que interactuamos con la tecnología.",
+            }
+        ],
+        2: [
+            {
+                titulo: "PROYECTO TITULO - 1°3 - A",
+                descripcion: "Información del proyecto 1°3 - A. Este proyecto se enfoca en la inteligencia artificial y el aprendizaje automático.",
+            }
+        ],
+        3: [
+            {
+                titulo: "PROYECTO TITULO - 1°4 - A",
+                descripcion: "Información del proyecto 1°4 - A. Exploramos las posibilidades de la realidad virtual y aumentada en la educación.",
+            },
+            {
+                titulo: "PROYECTO TITULO - 1°4 - B",
+                descripcion: "Información del proyecto 1°4 - B. Un proyecto innovador que combina robótica y programación.",
+            }
+        ]
     };
 
-    let currentImageIndex = 0;
-    let currentCursoIndex = 0;
+    const imagenes = ['/img/1.jpg', '/img/2.jpg', '/img/3.jpg', '/img/4.jpg'];
+
+    let currentCurso = 0;
+    let currentProject = 0;
+
+    function updateProject() {
+        const proyecto = proyectoData[currentCurso][currentProject];
+        
+        proyectoTitulo.textContent = proyecto.titulo;
+        proyectoDescripcion.textContent = proyecto.descripcion;
+    }
 
     function updateCurso(index) {
         cursos.forEach(q => q.classList.remove('active'));
         cursosLin.forEach(d => d.classList.remove('active'));
-        
         cursos[index].classList.add('active');
         cursosLin[index].classList.add('active');
-        
-        const cursoData = proyectoData[cursos[index].dataset.curso];
-        
-        proyectoTitulo.textContent = cursoData.titulo;
-        proyectoDescripcion.textContent = cursoData.descripcion;
-
-        currentCursoIndex = index;
-        currentImageIndex = index;
-        updateImage(index);
-    }
-
-    function updateImage(index) {
-        projectImages.forEach((img, i) => {
-            if (i === index) {
-                img.classList.add('active');
-            } else {
-                img.classList.remove('active');
-            }
-        });
+        currentCurso = index;
+        currentProject = 0;
+        updateProject();
+        projectImage.src = imagenes[index];
     }
 
     cursos.forEach((curso, index) => {
         curso.addEventListener('click', () => updateCurso(index));
     });
 
-    cursosLin.forEach((lin, index) => {
-        lin.addEventListener('click', () => updateCurso(index));
+    cursosLin.forEach((cursoLin, index) => {
+        cursoLin.addEventListener('click', () => updateCurso(index));
     });
 
-    const leftArrow = document.querySelector('.nav-arrow-left');
-    const rightArrow = document.querySelector('.nav-arrow-right');
-
-    function cambiarImagen(direccion) {
-        if (direccion === 'right') {
-            currentImageIndex = (currentImageIndex + 1) % projectImages.length;
+    function changeProject(direction) {
+        const projectCount = proyectoData[currentCurso].length;
+        if (direction === 'next') {
+            currentProject = (currentProject + 1) % projectCount;
         } else {
-            currentImageIndex = (currentImageIndex - 1 + projectImages.length) % projectImages.length;
+            currentProject = (currentProject - 1 + projectCount) % projectCount;
         }
-        
-        updateImage(currentImageIndex);
+        updateProject();
     }
 
-    leftArrow.addEventListener('click', () => cambiarImagen('left'));
-    rightArrow.addEventListener('click', () => cambiarImagen('right'));
+    leftArrow.addEventListener('click', () => changeProject('prev'));
+    rightArrow.addEventListener('click', () => changeProject('next'));
 
-    // Smooth scroll to projects section
+    // Inicializar con el primer curso y proyecto
+    updateCurso(0);
+
+    // Efecto de navbar pegajoso
+    window.addEventListener("scroll", function() {
+        const header = document.querySelector(".navbar_cicloB");
+        header.classList.toggle("sticky", window.scrollY > 0);
+    });
+
+    // Scroll suave al hacer clic en el indicador de desplazamiento
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    const proyectosContenedor = document.querySelector('.proyectos_contenedor');
+
     scrollIndicator.addEventListener('click', (e) => {
         e.preventDefault();
         proyectosContenedor.scrollIntoView({ behavior: 'smooth' });
     });
-
-    // Hide scroll indicator when projects are in view
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                scrollIndicator.style.display = 'none';
-            } else {
-                scrollIndicator.style.display = 'block';
-            }
-        });
-    }, { threshold: 0.1 });
-
-    observer.observe(proyectosContenedor);
-
-    // Initialize the first course
-    updateCurso(0);
 });

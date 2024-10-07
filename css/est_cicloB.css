@@ -1,55 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'quicksand';
+  font-family: 'Quicksand', sans-serif;
   box-sizing: border-box;
   overflow-x: hidden;
-  background-color: #a14a4a !important;
+  background: linear-gradient(135deg, #97A97C, #a6b988);
+  color: #333;
 }
 
-html {
-background-color: #a14a4a;
-font-family: 'quicksand';
-}
 .navbar_cicloB {
   position: fixed;
   top: 0;
   width: 100%;
   transition: 0.6s;
   display: flex;
-  justify-content: center; /* Centra los elementos en el navbar */
+  justify-content: center;
   align-items: center;
-  padding: 5px 10px; /* Reduce el padding para que el navbar sea más compacto */
+  padding: 10px;
   z-index: 1000;
+
 }
 
 .navbar_cicloB.sticky {
-  background: #000000;
-  transform: scaleY(1,2); /* En lugar de cambiar padding, reduce el tamaño con transform */
-  width: 100%;
-  position: fixed;
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 5px 10px;
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Controla el ancho del contenedor principal del navbar */
-  max-width: 1200px; /* Ancho máximo para dispositivos grandes */
-  padding-left: -10;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .logo-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinea los logos a la izquierda */
+  align-items: flex-start;
 }
 
 .logo {
   font-weight: 700;
   color: #FFFFFF;
-  font-size: 1.8em; /* Tamaño ajustado del título principal */
+  font-size: 1.8em;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -57,18 +53,14 @@ font-family: 'quicksand';
 .logos-secundarios {
   display: flex;
   flex-direction: column;
-  margin-top: -5px; /* Ajusta el margen superior para un espaciado más compacto */
+  margin-top: -5px;
 }
 
 .logo1, .logo2 {
   font-weight: 500;
-  font-size: 0.7em; /* Ajusta el tamaño de las fuentes secundarias */
+  font-size: 0.7em;
   color: #FFFFFF;
-  line-height: 1.2; /* Ajusta el espaciado entre las líneas de logo1 y logo2 */
-}
-
-.menu {
-  display: flex;
+  line-height: 1.2;
 }
 
 .menu ul {
@@ -79,58 +71,93 @@ font-family: 'quicksand';
 }
 
 .menu ul li {
-  margin-left: 20px; /* Espaciado entre los elementos del menú */
+  margin-left: 20px;
 }
 
 .menu ul li a {
   text-decoration: none;
   color: #FFFFFF;
-  font-size: 1em; /* Ajusta el tamaño de fuente del menú */
+  font-size: 1em;
   font-weight: 500;
   transition: 0.3s;
 }
+
+.menu ul li a:hover {
+  color: #FFD700;
+} 
+
 .contenido_titulo {
   text-align: center;
-  padding: 6rem 0 3rem;
+  padding: 8rem 0 3rem;
 }
 
 .contenido_titulo h1 {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  font-size: 5.5rem;
-  color: var(--secondary-color);
+  font-weight: 300;
+  font-size: 5rem;
+  color: white;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
+  margin-bottom: 2rem;
 }
 
 .year-navigation {
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  gap: 2rem;
   margin-bottom: 3rem;
 }
 
 .year-button {
-  background-color: white;
-  color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
   border: none;
-  padding: 2rem 2.5rem;
-  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 5px;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .year-button:hover {
-  background-color: var(--accent-color);
-  color: var(--secondary-color);
+  background-color: #FFD700;
+  color: #333;
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.info-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  background-color: white;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+.titulo_info {
+  font-size: 2.5em;
+  font-weight: 300;
+  color: #000000;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.texto_info {
+  font-size: 1.1em;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
 .carousel h2{
-  font-size: 3em;
-  font-weight: lighter;
+  font-size: 4em;
+  font-weight: 200;
   color: rgb(255, 255, 255); /* Asegúrate de que el texto sea visible sobre el fondo */
   margin: 0;
   letter-spacing: 5%;
@@ -148,6 +175,7 @@ font-family: 'quicksand';
   text-align: center;
   justify-content: center;
   margin-top: 4.2%;
+  color: white;
 }
 
 .carousel {
@@ -258,4 +286,23 @@ font-family: 'quicksand';
 
 .carrusel-next{
   right: 0px;
+}
+@media (max-width: 768px) {
+  .contenido_titulo h1 {
+    font-size: 3rem;
+  }
+
+  .year-navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .year-button {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+
+  .carrusel-list {
+    width: 100%;
+  }
 }

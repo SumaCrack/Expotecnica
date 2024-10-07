@@ -1,18 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/est_cicloB.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="/css/est_cicloB.css">
+    <title>E.E.S.T 1 - Ciclo Básico</title>
 </head>
 <body>
   
   <header class="navbar_cicloB">
     <div class="navbar-container">
-        <!-- Contenedor para el logo y los subtítulos -->
         <div class="logo-container">
             <span class="logo">E.E.S.T 1</span>
             <div class="logos-secundarios">
@@ -20,37 +21,35 @@
                 <span class="logo2">secundaria técnica Nº1</span>
             </div>
         </div>
-        <!-- Menú de navegación -->
         <nav class="menu">
             <ul>
                 <li><a href="index.html" class="opcion">INICIO</a></li>
                 <li><a href="ciclo_basico.html" class="opcion">CICLO BASICO</a></li>
-                <li><a href="" class="opcion">CICLO SUPERIOR</a></li>
+                <li><a href="ciclo_superior.html" class="opcion">CICLO SUPERIOR</a></li>
             </ul>
         </nav> 
     </div>
 </header>
      
-        <div class="contenido_titulo">
-              <h1>CICLO SUPERIOR</h1>
-          </div>
+<main>
+    <div class="contenido_titulo animate__animated animate__fadeInDown">
+        <h1>CICLO BASICO</h1>
+    </div>
 
-          <div class="year-navigation">
-            <button class="year-button" onclick="location.href='primer_ano.html'">INFORMATICA</button>
-            <button class="year-button" onclick="location.href='segundo-ano.html'">M.M.O</button>
-            <button class="year-button" onclick="location.href='tercer-ano.html'">ELECTROMECANICA</button>
-            <button class="year-button" onclick="location.href='tercer-ano.html'">E.P.S</button>
-          </div>
+    <div class="year-navigation animate__animated animate__fadeInUp">
+        <button class="year-button" onclick="location.href='ciclo_basic/primer_ano.html'">INFORMATICA</button>
+        <button class="year-button" onclick="location.href='ciclo_basic/segundo_ano.html'">M.M.O</button>
+        <button class="year-button" onclick="location.href='ciclo_basic/tercer_ano.html'">ELECTROMECANICA</button>
+        <button class="year-button" onclick="location.href='ciclo_basic/tercer_ano.html'">E.P.S</button>
+    </div>
 
-        
+    <section class="info-section">
+        <h2 class="titulo_info animate__animated animate__fadeIn">¿QUE SE HACE EN CICLO SUPERIOR?</h2>
+        <p class="texto_info animate__animated animate__fadeIn">El Ciclo Básico es la etapa inicial de la educación secundaria técnica. Durante estos tres años, los estudiantes adquieren conocimientos fundamentales en materias generales y se introducen en el mundo de la tecnología y la técnica. Es un período de exploración y descubrimiento que sienta las bases para la especialización en el Ciclo Superior.</p>
+    </section>
 
-          <div class="carousel">
-            <h2 class="titulo_info">¿QUE SE HACE EN CICLO SUPERIOR?</h2>
-            <p class="texto_info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis adipisci ad non, temporibus itaque minus quae nulla saepe alias, laborum ab soluta cupiditate tenetur! Aperiam doloremque sit sunt distinctio deleniti.</p>
-         
-
-          <div class="carrusel-list" id="carrusel-list">
-
+    <div class="carousel">
+        <div class="carrusel-list" id="carrusel-list">
             <button class="carrusel-arrow carrusel-prev" id="button-prev" data-button="button-prev"
                 onclick="app.processingButton(event)">
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
@@ -63,21 +62,15 @@
             </button>
 
             <div class="carrusel-track" id="track">
-
                 <div class="carrusel">
-
                     <div>
-
                         <a>
                             <picture>
-                                <img src="img/1.jpg" alt="imagen">
+                                <img src="img/1.jpg" alt="imagen" class="carrusel-img">
                             </picture>
                         </a>
-
                     </div>
-
                 </div>
-
                 <div class="carrusel">
 
                   <div>

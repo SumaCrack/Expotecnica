@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/est_cursos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <header class="navbar_cicloB">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <span class="logo">E.E.S.T 1</span>
+                <div class="logos-secundarios">
+                    <span class="logo1">Escuela educación</span>
+                    <span class="logo2">secundaria técnica Nº1</span>
+                </div>
+            </div>
+            <!-- Menú de navegación -->
+            <nav class="menu">
+                <ul>
+                    <li><a href="/index.html" class="opcion">INICIO</a></li>
+                    <li><a href="/ciclo_basico.html" class="opcion">CICLO BASICO</a></li>
+                    <li><a href="/ciclo_superior.html" class="opcion">CICLO SUPERIOR</a></li>
+                </ul>
+            </nav> 
+        </div>
+    </header>
+    <div class="intro-section">
+        <h1>Bienvenido a los proyectos de la expotecnica</h1>
+        <p>Deslice hacia abajo para ver todas las creaciones de los estudiantes</p>
+        <div class="scroll-indicator">
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+        </div>
+    </div>
+    
+    <div class="proyectos_contenedor">
+        <div class="cursos_vertical">
+            <div class="cursos_linea"></div>
+                <div class="curso_lin active" data-curso="1"></div>
+                <div class="curso_lin" data-curso="2"></div>
+                <div class="curso_lin" data-curso="3"></div>
+                <div class="curso_lin" data-curso="4"></div>
+        </div>
+        <div class="cursos">
+            <div class="curso active" data-curso="1">4°3</div>
+            <div class="curso" data-curso="2">5°3</div>
+            <div class="curso" data-curso="3">6°3</div>
+            <div class="curso" data-curso="4">7°3</div>
+        </div>
+        <div class="contenedor_proyecto">
+            <div class="proyecto_info">
+            <div class="proyecto_titulo">PROYECTO TITULO</div>
+            <div class="proyecto_descripcion">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae saepe reprehenderit quia incidunt cumque iste a debitis consequatur provident vitae soluta, expedita ipsam ea quo. Molestiae eveniet quis eius at?
+            </div>
+        </div>
+        <div class="imagen_proyecto">
+            <div class="image-container"> 
+                <img src="/img/1.jpg" alt="Project Image 1" class="project-image active">
+                <img src="/img/2.jpg" alt="Project Image 1" class="project-image">
+                <img src="/img/3.jpg" alt="Project Image 1" class="project-image">
+                <img src="/img/4.jpg" alt="Project Image 1" class="project-image">
+            </div>
+            <div class="nav-arrow nav-arrow-left">&lt;</div>
+            <div class="nav-arrow nav-arrow-right">&gt;</div>
+             </div>
+         
+        </div>
+    </div>
+    <script src="/js/script_curso.js"></script>
+    
+    <script>
+        window.addEventListener("scroll", function() {
+          var header = document.querySelector(".navbar_cicloB"); // Cambiado "navbar" por ".navbar"
+          header.classList.toggle("sticky", window.scrollY > 0); // Cambiado "scrolly" por "scrollY"
+        });
+      </script>
+
+</body>
+</html>
