@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
             {
                 titulo: "PROYECTO TITULO - 1°1 - B",
                 descripcion: "Información del proyecto 1°1 - B. Exploramos nuevas fronteras en el desarrollo de software y la experiencia del usuario.",
+            },
+            {
+                titulo: "PROYECTO TITULO - 1°1 - C",
+                descripcion: "Información del proyecto 1°1 - A. Este es un proyecto innovador que combina tecnología y diseño para crear soluciones únicas.",
+            },
+            {
+                titulo: "PROYECTO TITULO - 1°1 - D",
+                descripcion: "Información del proyecto 1°1 - B. Exploramos nuevas fronteras en el desarrollo de software y la experiencia del usuario.",
             }
         ],
         1: [
@@ -50,23 +58,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentCurso = 0;
     let currentProject = 0;
+    let currentImage = 0;
 
     function updateProject() {
         const proyecto = proyectoData[currentCurso][currentProject];
-        
         proyectoTitulo.textContent = proyecto.titulo;
         proyectoDescripcion.textContent = proyecto.descripcion;
     }
 
     function updateCurso(index) {
         cursos.forEach(q => q.classList.remove('active'));
-        cursosLin.forEach(d => d.classList.remove('active'));
         cursos[index].classList.add('active');
-        cursosLin[index].classList.add('active');
         currentCurso = index;
         currentProject = 0;
         updateProject();
-        projectImage.src = imagenes[index];
+        updateVerticalNavigation();
+    }
+
+    function updateVerticalNavigation() {
+        const projectCount = proyectoData[currentCurso].length;
+        cursosLin.forEach((lin, index) => {
+            if (index < projectCount) {
+                lin.style.display = 'block';
+                lin.classList.toggle('active', index === currentProject);
+            } else {
+                lin.style.display = 'none';
+            }
+        });
     }
 
     cursos.forEach((curso, index) => {
@@ -74,37 +92,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     cursosLin.forEach((cursoLin, index) => {
-        cursoLin.addEventListener('click', () => updateCurso(index));
+        cursoLin.addEventListener('click', () => {
+            currentProject = index;
+            updateProject();
+            updateVerticalNavigation();
+        });
     });
 
-    function changeProject(direction) {
-        const projectCount = proyectoData[currentCurso].length;
+    function changeImage(direction) {
         if (direction === 'next') {
-            currentProject = (currentProject + 1) % projectCount;
+            currentImage = (currentImage + 1) % imagenes.length;
         } else {
-            currentProject = (currentProject - 1 + projectCount) % projectCount;
+            currentImage = (currentImage - 1 + imagenes.length) % imagenes.length;
         }
-        updateProject();
+        projectImage.src = imagenes[currentImage];
     }
 
-    leftArrow.addEventListener('click', () => changeProject('prev'));
-    rightArrow.addEventListener('click', () => changeProject('next'));
+    leftArrow.addEventListener('click', () => changeImage('prev'));
+    rightArrow.addEventListener('click', () => changeImage('next'));
 
-    // Inicializar con el primer curso y proyecto
+    // Initialize with the first course and project
     updateCurso(0);
-
-    // Efecto de navbar pegajoso
-    window.addEventListener("scroll", function() {
-        const header = document.querySelector(".navbar_cicloB");
-        header.classList.toggle("sticky", window.scrollY > 0);
-    });
-
-    // Scroll suave al hacer clic en el indicador de desplazamiento
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    const proyectosContenedor = document.querySelector('.proyectos_contenedor');
-
-    scrollIndicator.addEventListener('click', (e) => {
-        e.preventDefault();
-        proyectosContenedor.scrollIntoView({ behavior: 'smooth' });
-    });
 });

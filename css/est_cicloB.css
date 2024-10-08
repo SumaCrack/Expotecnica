@@ -93,11 +93,12 @@ body {
 
 .contenido_titulo h1 {
   font-weight: 300;
-  font-size: 5rem;
-  color: white;
+  font-size: 4.7rem;
+  color: black;
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-bottom: 2rem;
+  background-color: white;
 }
 
 .year-navigation {

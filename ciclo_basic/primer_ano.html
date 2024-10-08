@@ -66,5 +66,11 @@
     </div>
 
     <script src="/js/script_curso.js"></script>
+    <script>
+        window.addEventListener("scroll", function() {
+          var header = document.querySelector(".navbar_cicloB"); // Cambiado "navbar" por ".navbar"
+          header.classList.toggle("sticky", window.scrollY > 0); // Cambiado "scrolly" por "scrollY"
+        });
+      </script>
 </body>
 </html>
