@@ -20,45 +20,42 @@ body {
   background-size: cover;
   z-index: -1;
 }
-.navbar{
+.navbar_cicloB {
   position: fixed;
   top: 0;
   width: 100%;
   transition: 0.6s;
   display: flex;
-  justify-content: center; /* Centra los elementos en el navbar */
+  justify-content: center;
   align-items: center;
-  padding: 5px 10px; /* Reduce el padding para que el navbar sea más compacto */
+  padding: 10px;
   z-index: 1000;
+
 }
 
-.navbar.sticky {
-  background: #000000;
-  transform: scaleY(1,2); /* En lugar de cambiar padding, reduce el tamaño con transform */
-  width: 100%;
-  position: fixed;
-  z-index: 1;
+.navbar_cicloB.sticky {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 5px 10px;
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Controla el ancho del contenedor principal del navbar */
-  max-width: 1200px; /* Ancho máximo para dispositivos grandes */
-  padding-left: -10;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .logo-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinea los logos a la izquierda */
+  align-items: flex-start;
 }
 
 .logo {
-  font-weight: 700;
+  font-weight: 200;
   color: #FFFFFF;
-  font-size: 1.8em; /* Tamaño ajustado del título principal */
+  font-size: 1.8em;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -66,17 +63,14 @@ body {
 .logos-secundarios {
   display: flex;
   flex-direction: column;
-  margin-top: -5px; /* Ajusta el margen superior para un espaciado más compacto */
+  margin-top: -5px;
 }
 
 .logo1, .logo2 {
-  font-weight: 500;
-  font-size: 0.7em; /* Ajusta el tamaño de las fuentes secundarias */
+  font-weight: 200;
+  font-size: 0.7em;
   color: #FFFFFF;
-  line-height: 1.2; /* Ajusta el espaciado entre las líneas de logo1 y logo2 */
-}
-.menu {
-  display: flex;
+  line-height: 1.2;
 }
 
 .menu ul {
@@ -87,19 +81,20 @@ body {
 }
 
 .menu ul li {
-  margin-left: 20px; /* Espaciado entre los elementos del menú */
+  margin-left: 20px;
 }
 
 .menu ul li a {
   text-decoration: none;
   color: #FFFFFF;
-  font-size: 1em; /* Ajusta el tamaño de fuente del menú */
+  font-size: 1em;
   font-weight: 500;
   transition: 0.3s;
-}  
+}
+
 .menu ul li a:hover {
   color: #FFD700;
-}
+} 
 .contenedor-text {
   margin-top: 2%;
   display: flex;
@@ -201,14 +196,20 @@ body {
 .horario {
   background: #97A97C;
   padding: 40px 0;
+  height: 120px;
   color: #FFFFFF;
   text-align: center;
+ 
 }
-.horario_text {
-  font-size: 2.7rem;
+.contenedor-horario p{
+  margin-top: -1.5%;
+  font-size: 2rem;
+}
+.horario_text{
+ 
   letter-spacing: 2px;
   font-weight: 300;
-  margin: 10px 0;
+  margin: 5px 5px;
 }
 .objetivo {
   background: #F5F5F5;
@@ -248,4 +249,47 @@ margin-top: 5%;
     margin-right: 0;
 
   }
+}
+footer{
+  position: relative;
+  width: 100%;
+  padding: 8px 8px;
+  background:#97A97C;
+  height: 200%;
+  justify-content: center;
+  align-items: center;
+}
+
+.social_icon{
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+margin: 0;
+left: 45%;
+margin-bottom: -4.4%;
+}
+
+
+.icon_elemn{
+  list-style: none;
+}
+
+.icon{
+  color: white;
+  font-size: 32px;
+  display: inline-block;
+  margin: 0;
+  transition: 0.5s;
+}
+
+.icon:hover{
+  transform: translateY(-10px);
+}
+
+.text_footer{
+  text-align: center;
+  color: white;
+  margin-left: -85%;
+  margin-top: 1.5%;
 }

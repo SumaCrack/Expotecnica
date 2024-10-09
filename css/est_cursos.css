@@ -17,72 +17,73 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px 10px;
+    padding: 10px;
     z-index: 1000;
-}
-
-.navbar_cicloB.sticky {
-    background: #000000;
+  
+  }
+  
+  .navbar_cicloB.sticky {
+    background: rgba(0, 0, 0, 0.9);
     padding: 5px 10px;
-}
-
-.navbar-container {
+  }
+  
+  .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 1200px;
-}
-
-.logo-container {
+  }
+  
+  .logo-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
-
-.logo {
+  }
+  
+  .logo {
     font-weight: 700;
     color: #FFFFFF;
     font-size: 1.8em;
     text-transform: uppercase;
     letter-spacing: 2px;
-}
-
-.logos-secundarios {
+  }
+  
+  .logos-secundarios {
     display: flex;
     flex-direction: column;
     margin-top: -5px;
-}
-
-.logo1, .logo2 {
+  }
+  
+  .logo1, .logo2 {
     font-weight: 500;
     font-size: 0.7em;
     color: #FFFFFF;
     line-height: 1.2;
-}
-
-.menu ul {
+  }
+  
+  .menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-}
-
-.menu ul li {
+  }
+  
+  .menu ul li {
     margin-left: 20px;
-}
-
-.menu ul li a {
+  }
+  
+  .menu ul li a {
     text-decoration: none;
     color: #FFFFFF;
     font-size: 1em;
     font-weight: 500;
     transition: 0.3s;
-}
-
-.menu ul li a:hover {
+  }
+  
+  .menu ul li a:hover {
     color: #FFD700;
-}
+  } 
 
 .intro-section {
     height: 100vh;
@@ -171,81 +172,84 @@ body {
     }
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-}
-
 .proyectos_contenedor {
-    max-width: 700px;
-    height: 450px;
-    margin: 40px auto;
+    width: 70%;
+    max-width: 1000px;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.cursos {
+    padding: 24px;
+    box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.curso {
-    padding: 25px 50px;
-    width: 80px;
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: center;
-}
-
-.curso.active {
-    background-color: #97A97C;
-    color: white;
+    flex-direction: column;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1%;
+    border-radius: 1%;
+    position: relative;
 }
 
 .cursos_vertical {
     position: absolute;
-    left: 2px;
-    top: 57%;
+    left: 5px;
+    top: 60%;
     transform: translateY(-50%);
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .cursos_linea {
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 0;
     bottom: 0;
     width: 2px;
-    height: 64%;
-    background-color: #ccc;
-    transform: translateX(-100%);
-    z-index: 1;
+    background-color: #999;
+    transform: translateX(-50%);
 }
 
 .curso_lin {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    margin: 300% auto;
+    background-color: #999;
+    transition: all 0.3s ease;
+    z-index: 1;
     cursor: pointer;
-    position: relative;
-    z-index: 2;
-    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .curso_lin.active {
-    background-color: #97A97C;
-    border-color: #97A97C;
+    width: 22px;
+    height: 22px;
+    background-color: #666;
+}
+
+.cursos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.curso {
+    background-color: white;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex: 1;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.curso:not(:last-child) {
+    margin-right: 10px;
+}
+
+.curso:hover, .curso.active {
+    background-color: #a6b988;
 }
 
 .contenedor_proyecto {
@@ -255,43 +259,55 @@ body {
 
 .proyecto_info {
     width: 48%;
-    margin: 2.4%;
+    margin: 2%;
 }
 
 .proyecto_titulo {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 2.6rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+    color: #333;
 }
 
 .proyecto_descripcion {
-    font-size: 16px;
+    font-size: 14px;
     color: #666;
+    line-height: 1.6;
 }
 
 .imagen_proyecto {
-    width: 34%;
-    right: 7%;
-    top: -10%;
+    width: 48%;
+    aspect-ratio: 1 / 1;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
     position: relative;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 .project-image {
     width: 100%;
-    border-radius: 4px;
+    height: 100%;
+    object-fit: cover;
 }
 
 .nav-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    width: 10%;
+    height: 40px;
     background-color: rgba(255, 255, 255, 0.7);
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    transition: background-color 0.3s;
+    z-index: 10;
+    font-size: 24px;
+    color: #333;
+    transition: background-color 0.3s ease;
 }
 
 .nav-arrow:hover {
@@ -299,11 +315,13 @@ body {
 }
 
 .nav-arrow-left {
+    align-items: center;
     left: 10px;
 }
 
 .nav-arrow-right {
     right: 10px;
+    align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -328,4 +346,51 @@ body {
     .curso:nth-child(2n) {
         margin-right: 0;
     }
+
+    .cursos_vertical {
+        display: none;
+    }
 }
+footer{
+    position: relative;
+    width: 100%;
+    padding: 8px 8px;
+    background: white;
+    min-height: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .social_icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 10px;
+  left: 45%;
+  }
+  
+  
+  .icon_elemn{
+    list-style: none;
+  }
+  
+  .icon{
+    color: #97A97C;
+   
+    font-size: 32px;
+    display: inline-block;
+    margin: 0;
+    transition: 0.5s;
+  }
+  
+  .icon:hover{
+    transform: translateY(-10px);
+  }
+  
+  .text_footer{
+    text-align: center;
+    color: #97A97C;
+    margin-left: -85%;
+    margin-top: -2%;
+  }

@@ -307,3 +307,46 @@ body {
     width: 100%;
   }
 }
+footer{
+  position: relative;
+  width: 100%;
+  padding: 8px 8px;
+  background:white;
+  height: 200%;
+  justify-content: center;
+  align-items: center;
+}
+
+.social_icon{
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+margin: 0;
+left: 45%;
+margin-bottom: -4.4%;
+}
+
+
+.icon_elemn{
+  list-style: none;
+}
+
+.icon{
+  color: #97A97C;
+  font-size: 32px;
+  display: inline-block;
+  margin: 0;
+  transition: 0.5s;
+}
+
+.icon:hover{
+  transform: translateY(-10px);
+}
+
+.text_footer{
+  text-align: center;
+  color: #97A97C;
+  margin-left: -85%;
+  margin-top: 1.5%;
+}
