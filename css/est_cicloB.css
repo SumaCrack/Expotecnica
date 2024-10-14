@@ -1,352 +1,392 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Quicksand', sans-serif;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  background: linear-gradient(135deg, #97A97C, #a6b988);
-  color: #333;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-.navbar_cicloB {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  transition: 0.6s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  z-index: 1000;
-
-}
-
-.navbar_cicloB.sticky {
-  background: rgba(0, 0, 0, 0.9);
-  padding: 5px 10px;
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-}
-
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.logo {
-  font-weight: 700;
-  color: #FFFFFF;
-  font-size: 1.8em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.logos-secundarios {
-  display: flex;
-  flex-direction: column;
-  margin-top: -5px;
-}
-
-.logo1, .logo2 {
-  font-weight: 500;
-  font-size: 0.7em;
-  color: #FFFFFF;
-  line-height: 1.2;
-}
-
-.menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.menu ul li {
-  margin-left: 20px;
-}
-
-.menu ul li a {
-  text-decoration: none;
-  color: #FFFFFF;
-  font-size: 1em;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.menu ul li a:hover {
-  color: #FFD700;
-} 
-
-.contenido_titulo {
-  text-align: center;
-  padding: 8rem 0 3rem;
-}
-
-.contenido_titulo h1 {
-  font-weight: 300;
-  font-size: 4.7rem;
-  color: black;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-bottom: 2rem;
-  background-color: white;
-}
-
-.year-navigation {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.year-button {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #333;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 30px;
-  font-weight: 600;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.year-button:hover {
-  background-color: #FFD700;
-  color: #333;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.info-section {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  background-color: white;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-}
-
-.titulo_info {
-  font-size: 2.5em;
-  font-weight: 300;
-  color: #000000;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.texto_info {
-  font-size: 1.1em;
-  font-weight: 400;
-  color: #000000;
-  line-height: 1.6;
-  text-align: justify;
-}
-
-
-.carousel h2{
-  font-size: 4em;
-  font-weight: 200;
-  color: rgb(255, 255, 255); /* Asegúrate de que el texto sea visible sobre el fondo */
-  margin: 0;
-  letter-spacing: 5%;
- margin-bottom: 3%;
- text-align: center;
-  justify-content: center;
-  margin-top: 5%;
-}
-
-.carousel p{
-  font-size:1.4em;
-  font-weight: 400;
-  margin: 0;
-  margin-top: -10px;
-  text-align: center;
-  justify-content: center;
-  margin-top: 4.2%;
-  color: white;
-}
-
-.carousel {
-
-            padding: 3rem 0;
-            margin-top: 3rem;
-  
-}
-
-@media(min-width:768px) {
-
-    .carousel{
-      margin: 0px 60px;
-    }
-}
-
-.carrusel-list {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 86vw;
-  height: 300px;
-  padding: 10px 0px;
-  margin: 0px auto;
-  max-width: 90vw;
-  margin-top: 5%;
- overflow: hidden;
-} 
-
-.carrusel-track{
-  position: relative;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  transition: 0.5s ease-in-out;
-
-}
-
-.carrusel{
-  position: relative;
-  width: 210px;
-  padding: 0px 1rem;
-  float: left;
-
-  box-sizing: border-box;
-  display: flex;
-  height: 100%;
-}
-
-.carrusel h4{
-  position: absolute;
-  z-index: 1;
-  font-size: 22px;
-  line-height: 23px;
-  color: #FFFFFF;
-  padding: 15px;
-}
-
-.carrusel h4 small {
-  font-size: 15px;
-  display: block;
-}
-
-.carrusel a img{
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-@media(min-width:768px) {
-  .carrusel{
-    width: 275px;
-  }
-  .carrusel a img{
-    width:250px;
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #97A97C, #a6b988);
+    color: #333;
   }
 
-}
+  .navbar_cicloB {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 0.6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    z-index: 1000;
+  }
 
-.carrusel-arrow {
-  border-radius: 30px;
-  background-color: #FFFFFF;
-  position: absolute;
-  z-index: 4;
-  width: 48px;
-  height: 48px;
-  text-align: center;
-  border: 0;
-  cursor: pointer;
-}
+  .navbar_cicloB.sticky {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 5px 10px;
+  }
 
-.carrusel-arrow:focus {
-  outline: 0%;
-}
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+  }
 
-.carrusel-arrow svg {
-  width: 12px;
-  height: 100%;
-  color: rgba(0, 0, 0, 0.7);
-}
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.carrusel-prev{
-  left: 0px;
-}
+  .logo {
+    font-weight: 700;
+    color: #FFFFFF;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
 
-.carrusel-next{
-  right: 0px;
-}
-@media (max-width: 768px) {
+  .logos-secundarios {
+    display: flex;
+    flex-direction: column;
+    margin-top: -5px;
+  }
+
+  .logo1, .logo2 {
+    font-weight: 500;
+    font-size: 0.7em;
+    color: #FFFFFF;
+    line-height: 1.2;
+  }
+
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .menu ul li {
+    margin-left: 20px;
+  }
+
+  .menu ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1em;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+
+  .menu ul li a:hover {
+    color: #FFD700;
+  }
+
+  .contenido_titulo {
+    text-align: center;
+    padding: 8rem 0 3rem;
+  }
+
   .contenido_titulo h1 {
-    font-size: 3rem;
+    font-weight: 300;
+    font-size: 4rem;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
   }
 
   .year-navigation {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
   }
 
   .year-button {
-    width: 80%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .year-button:hover {
+    background-color: #FFD700;
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .info-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  }
+
+  .titulo_info {
+    font-size: 2.5em;
+    font-weight: 300;
+    color: #000000;
     margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .texto_info {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  .carousel {
+    padding: 3rem 0;
+    margin-top: 3rem;
+  }
+
+  .carousel h2 {
+    font-size: 3.5em;
+    font-weight: 200;
+    color: rgb(255, 255, 255);
+    margin: 0 0 3% 0;
+    letter-spacing: 5%;
+    text-align: center;
+  }
+
+  .carousel p {
+    font-size: 1.4em;
+    font-weight: 400;
+    margin: 4.2% 0 0 0;
+    text-align: center;
+    color: white;
   }
 
   .carrusel-list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 300px;
+    padding: 10px 0px;
+    margin: 5% auto 0;
+    overflow: hidden;
+  }
+
+  .carrusel-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    transition: 0.5s ease-in-out;
     width: 100%;
   }
-}
-footer{
-  position: relative;
-  width: 100%;
-  padding: 8px 8px;
-  background:white;
-  height: 200%;
-  justify-content: center;
-  align-items: center;
-}
 
-.social_icon{
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
-margin: 0;
-left: 45%;
-margin-bottom: -4.4%;
-}
+  .carrusel {
+    position: relative;
+    width: 200px;
+    padding: 0px 1rem;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+  }
+
+  .carrusel h4 {
+    position: absolute;
+    z-index: 1;
+    font-size: 22px;
+    line-height: 23px;
+    color: #FFFFFF;
+    padding: 15px;
+  }
+
+  .carrusel h4 small {
+    font-size: 15px;
+    display: block;
+  }
+
+  .carrusel a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carrusel a img {
+    width: 110%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .carrusel-arrow {
+    border-radius: 30px;
+    background-color: #FFFFFF;
+    position: absolute;
+    z-index: 4;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .carrusel-arrow:focus {
+    outline: 0%;
+  }
+
+  .carrusel-arrow svg {
+    width: 12px;
+    height: 100%;
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .carrusel-prev {
+    left: 0px;
+  }
+
+  .carrusel-next {
+    right: 0px;
+  }
 
 
-.icon_elemn{
-  list-style: none;
-}
+  footer {
+    position: relative;
+    width: 100%;
+    padding: 20px 8px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.icon{
-  color: #97A97C;
-  font-size: 32px;
-  display: inline-block;
-  margin: 0;
-  transition: 0.5s;
-}
+  .social_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
 
-.icon:hover{
-  transform: translateY(-10px);
-}
+  .icon_elemn {
+    list-style: none;
+  }
 
-.text_footer{
-  text-align: center;
-  color: #97A97C;
-  margin-left: -85%;
-  margin-top: 1.5%;
-}
+  .icon {
+    color: #97A97C;
+    font-size: 32px;
+    display: inline-block;
+    margin: 0 10px;
+    transition: 0.5s;
+  }
+
+  .icon:hover {
+    transform: translateY(-10px);
+  }
+
+  .text_footer {
+    text-align: center;
+    color: #97A97C;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .menu {
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .menu ul {
+      flex-direction: column;
+    }
+
+    .menu ul li {
+      margin: 10px 0;
+    }
+
+    .contenido_titulo h1 {
+      font-size: 3rem;
+    }
+
+    .year-navigation {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .year-button {
+      width: 80%;
+      margin-bottom: 1rem;
+    }
+
+    .carousel h2 {
+      font-size: 2.5em;
+    }
+
+    .carousel p {
+      font-size: 1.2em;
+    }
+
+    .carrusel-list {
+      width: 400px;
+      height: 250px;
+    }
+
+    .carrusel {
+      width: 50%;
+      height: 320px;
+    }
+
+    .carrusel a img {
+      width: 110%;
+      height: 300px;
+
+      
+    }
+    .carrusel-arrow {
+      width: 36px;
+      height: 36px;
+    }
+
+    .carrusel-prev {
+      left: 5px;
+    }
+
+    .carrusel-next {
+      right: 5px;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .carrusel-list {
+      width: 95%;
+    }
+
+    .carrusel {
+      width: 250px;
+    }
+  }
