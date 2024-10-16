@@ -263,19 +263,19 @@
   .contenido_texto_obj h2 {
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 5%;
   }
 
   .contenido_texto_obj p {
     font-size: 120%;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 45%;
   }
 
   footer {
     position: relative;
     width: 100%;
-    padding: 20px 8px;
+    padding: 1px 1px;
     background: #97A97C;
     display: flex;
     flex-direction: column;
@@ -287,7 +287,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-top: 20px;
   }
 
   .icon_elemn {

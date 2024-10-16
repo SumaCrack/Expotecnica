@@ -1,75 +1,56 @@
-function App() {
-    this.carruselList = document.querySelector('#carrusel-list');
-    this.carruselTrack = document.querySelector('#track');
-    this.carrusels = this.carruselTrack.querySelectorAll('.carrusel');
-    this.carruselWidth = this.carrusels[0].offsetWidth;
-    this.trackWidth = this.carruselTrack.offsetWidth;
-    this.listWidth = this.carruselList.offsetWidth;
+class Carousel {
+  constructor() {
+    this.carouselList = document.querySelector('#carrusel-list');
+    this.carouselTrack = document.querySelector('#track');
+    this.carousels = this.carouselTrack.querySelectorAll('.carrusel');
+    this.carouselWidth = this.carousels[0].offsetWidth;
+    this.trackWidth = this.carouselTrack.offsetWidth;
+    this.listWidth = this.carouselList.offsetWidth;
 
     this.prevButton = document.querySelector('#button-prev');
     this.nextButton = document.querySelector('#button-next');
 
-    this.carruselTrack.style.left = '0px';
     this.currentPosition = 0;
-    this.currentSlide = 0;
+    this.slidesToShow = Math.floor(this.listWidth / this.carouselWidth);
+    this.totalSlides = this.carousels.length;
 
+    this.setInitialPosition();
     this.setEventListeners();
-    this.cloneNodes();
-}
+    this.updateButtonVisibility();
+  }
 
-App.prototype.setEventListeners = function() {
-    this.prevButton.addEventListener('click', this.processingButton.bind(this));
-    this.nextButton.addEventListener('click', this.processingButton.bind(this));
-}
+  setInitialPosition() {
+    this.carouselTrack.style.transform = 'translateX(0)';
+  }
 
-App.prototype.cloneNodes = function() {
-    const firstCarruselClone = this.carrusels[0].cloneNode(true);
-    const lastCarruselClone = this.carrusels[this.carrusels.length - 1].cloneNode(true);
+  setEventListeners() {
+    this.prevButton.addEventListener('click', () => this.move('prev'));
+    this.nextButton.addEventListener('click', () => this.move('next'));
+  }
 
-    this.carruselTrack.appendChild(firstCarruselClone);
-    this.carruselTrack.insertBefore(lastCarruselClone, this.carrusels[0]);
-
-    this.carrusels = this.carruselTrack.querySelectorAll('.carrusel');
-    this.carruselTrack.style.left = `-${this.carruselWidth}px`;
-}
-
-App.prototype.processingButton = function(event) {
-    const btn = event.currentTarget;
-    btn.dataset.button == "button-prev" ? this.prevAction() : this.nextAction();
-}
-
-App.prototype.resetPosition = function() {
-    if (this.currentPosition === 0) {
-        this.carruselTrack.style.transition = 'none';
-        this.currentPosition = -(this.carrusels.length - 2) * this.carruselWidth;
-        this.carruselTrack.style.left = `${this.currentPosition}px`;
-    } else if (this.currentPosition === -(this.carrusels.length - 1) * this.carruselWidth) {
-        this.carruselTrack.style.transition = 'none';
-        this.currentPosition = -this.carruselWidth;
-        this.carruselTrack.style.left = `${this.currentPosition}px`;
+  move(direction) {
+    if (direction === 'prev' && this.currentPosition < 0) {
+      this.currentPosition += this.carouselWidth;
+    } else if (direction === 'next' && this.currentPosition > -((this.totalSlides - this.slidesToShow) * this.carouselWidth)) {
+      this.currentPosition -= this.carouselWidth;
     }
+
+    this.carouselTrack.style.transform = `translateX(${this.currentPosition}px)`;
+    this.updateButtonVisibility();
+  }
+
+  updateButtonVisibility() {
+    this.prevButton.style.display = this.currentPosition < 0 ? 'block' : 'none';
+    this.nextButton.style.display = 
+      this.currentPosition > -((this.totalSlides - this.slidesToShow) * this.carouselWidth) ? 'block' : 'none';
+  }
 }
 
-App.prototype.prevAction = function() {
-    if (this.currentPosition < 0) {
-        this.currentPosition += this.carruselWidth;
-        this.carruselTrack.style.transition = 'left 0.5s ease-in-out';
-        this.carruselTrack.style.left = `${this.currentPosition}px`;
-        setTimeout(() => this.resetPosition(), 500);
-    }
-}
+window.addEventListener('load', () => {
+  new Carousel();
+});
 
-App.prototype.nextAction = function() {
-    if (this.currentPosition > -(this.carrusels.length - 1) * this.carruselWidth) {
-        this.currentPosition -= this.carruselWidth;
-        this.carruselTrack.style.transition = 'left 0.5s ease-in-out';
-        this.carruselTrack.style.left = `${this.currentPosition}px`;
-        setTimeout(() => this.resetPosition(), 500);
-    }
-}
-
-window.onload = function(event) {
-    var app = new App();
-    window.app = app;
-}
-
+// Recalculate carousel on window resize
+window.addEventListener('resize', () => {
+  new Carousel();
+});
