@@ -1,5 +1,7 @@
 
-  html {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+  
+html {
     scroll-behavior: smooth;
   }
 
@@ -9,6 +11,8 @@
     font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
     overflow-x: hidden;
+    background: linear-gradient(135deg, #97A97C, #a6b988);
+    color: #333;
   }
 
   .imagen_fondo {
@@ -57,7 +61,7 @@
   }
 
   .logo {
-    font-weight: 200;
+    font-weight: 700;
     color: #FFFFFF;
     font-size: 1.8em;
     text-transform: uppercase;
@@ -71,7 +75,7 @@
   }
 
   .logo1, .logo2 {
-    font-weight: 200;
+    font-weight: 500;
     font-size: 0.7em;
     color: #FFFFFF;
     line-height: 1.2;
@@ -224,7 +228,7 @@
   }
 
   .contenedor-horario p {
-    margin-top: -1.5%;
+    margin-top: -1%;
     font-size: 2rem;
   }
 
@@ -236,13 +240,13 @@
 
   .objetivo {
     background: #F5F5F5;
-    padding: 50px 0;
+    padding: 80px 0;
   }
 
   .contenido_expo {
     display: flex;
     align-items: center;
-    max-width: 2000px;
+    max-width: 1500px;
     padding: 0 15px;
     flex-wrap: wrap;
   }
@@ -256,20 +260,21 @@
 
   .contenido_texto_obj {
     color: #333;
-    width: 100%;
-    max-width: 60%;
+    width: 90%;
+    max-width: 50%;
+    margin-right: 5%;
   }
 
   .contenido_texto_obj h2 {
     font-size: 3rem;
-    text-align: center;
-    margin-bottom: 5%;
+ 
+    margin-bottom: %;
   }
 
   .contenido_texto_obj p {
-    font-size: 120%;
+    font-size: 130%;
     line-height: 1.6;
-    margin-bottom: 45%;
+    margin-bottom: 20%;
   }
 
   footer {
@@ -316,19 +321,25 @@
       flex-direction: column;
       align-items: flex-start;
     }
-
+    .logo-container {
+      margin-left: 30%;
+    }
+   
     .menu {
       margin-top: 10px;
       width: 100%;
     }
 
     .menu ul {
-      flex-direction: column;
+      justify-content: space-between;
+      
     }
 
     .menu ul li {
       margin: 10px 0;
+      align-items: center;
     }
+
 
     .text {
       font-size: calc(1.5em + 3.20vw);
@@ -337,9 +348,19 @@
     .text1 {
       font-size: calc(0.7em + 0.20vw);
     }
-
+    
+    .contenedor-horario p {
+      font-size: 1.4rem;
+    }
+    .horario {
+      padding: 18px 0;
+ 
+    }
     .carta {
-      width: 100%;
+      width: 90%;
+    }
+    .carta_contenedor {
+      padding: 0 15px;
     }
 
     .imagen_robot, .contenido_texto_obj {

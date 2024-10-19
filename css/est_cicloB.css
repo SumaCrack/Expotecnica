@@ -273,8 +273,8 @@
   footer {
     position: relative;
     width: 100%;
-    padding: 20px 8px;
-    background: white;
+    padding: 1px 1px;
+    background: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -284,8 +284,9 @@
   .social_icon {
     display: flex;
     justify-content: center;
+    
     align-items: center;
-    margin: 10px 0;
+    margin-top: 20px;
   }
 
   .icon_elemn {
@@ -307,26 +308,29 @@
   .text_footer {
     text-align: center;
     color: #97A97C;
-    margin-top: 10px;
   }
-
   @media (max-width: 768px) {
     .navbar-container {
       flex-direction: column;
       align-items: flex-start;
     }
-
+    .logo-container {
+      margin-left: 30%;
+    }
+   
     .menu {
       margin-top: 10px;
       width: 100%;
     }
 
     .menu ul {
-      flex-direction: column;
+      justify-content: space-between;
+      
     }
 
     .menu ul li {
       margin: 10px 0;
+      align-items: center;
     }
 
     .contenido_titulo h1 {

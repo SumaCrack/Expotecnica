@@ -3,11 +3,17 @@
     scroll-behavior: smooth;
   }
 
+  
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
   body {
-    font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
     background: linear-gradient(135deg, #97A97C, #a6b988);
+    color: #333;
   }
 
   .navbar_cicloB {
@@ -81,11 +87,6 @@
     font-weight: 500;
     transition: 0.3s;
   }
-
-  .menu ul li a:hover {
-    color: #FFD700;
-  }
-
   .intro-section {
     height: 100vh;
     display: flex;
@@ -101,7 +102,7 @@
   .intro-section h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: -0.1rem;
   }
 
@@ -176,7 +177,7 @@
 
   .proyectos_contenedor {
     width: 90%;
-    max-width: 800px;
+    max-width: 900px;
     height: 500px;
     background-color: #ffffff;
     padding: 24px;
@@ -187,7 +188,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 1%;
     position: relative;
-  
+   margin-bottom: 10%;
   }
 
   .cursos_vertical {
@@ -231,7 +232,6 @@
   .cursos {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 24px;
     flex-wrap:wrap;
   }
 
@@ -247,7 +247,7 @@
     text-align: center;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
-    margin-bottom: 10px;
+ 
   }
 
   .curso:not(:last-child) {
@@ -271,30 +271,30 @@
   }
 
   .proyecto_titulo {
-    font-size: 2.6rem;
+    font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 24px;
     color: #333;
   }
 
   .proyecto_descripcion {
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
     line-height: 1.6;
+    word-wrap: break-word;
   }
 
   .imagen_proyecto {
-    width: 100%;
-    max-width: 48%;
+    width: 80%;
+    max-width: 44%;
     aspect-ratio: 1 / 1;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
-    position: relative;
+    position:absolute;
     overflow: hidden;
     border-radius: 8px;
     margin: 2%;
-    right: -50%;
-    bottom: 37%;
+    right: 1%;
+    bottom: -1%;
     
   }
 
@@ -338,8 +338,8 @@
   footer {
     position: relative;
     width: 100%;
-    padding: 20px 8px;
-    background: white;
+    padding: 1px 1px;
+    background: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -350,7 +350,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+   
   }
 
   .icon_elemn {
@@ -372,26 +372,29 @@
   .text_footer {
     text-align: center;
     color: #97A97C;
-    margin-top: 10px;
   }
-
   @media (max-width: 768px) {
     .navbar-container {
       flex-direction: column;
       align-items: flex-start;
     }
-
+    .logo-container {
+      margin-left: 30%;
+    }
+   
     .menu {
       margin-top: 10px;
       width: 100%;
     }
 
     .menu ul {
-      flex-direction: column;
+      justify-content: space-between;
+      
     }
 
     .menu ul li {
       margin: 10px 0;
+      align-items: center;
     }
 
     .intro-section h1 {
@@ -401,9 +404,37 @@
     .intro-section p {
       font-size: 1.2rem;
     }
+    .proyecto_descripcion {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .proyecto_info {
+      width: 100%;
+      max-width: 120%;
+
+      height: 30%;
+      margin: 2%;
+    }
+  
+  
+    .proyectos_contenedor {
+      width: 95%;
+      max-width: 800px;
+     
+    }
+    .proyecto_titulo {
+      font-size: 1rem;
+     
+    }
+    .cursos {
+      display:inline-flex;
+      gap: 10px
+    }
 
     .curso {
-      flex-basis: calc(50% - 5px);
+      flex-basis: calc(10% - 5px);
+      font-size: 15px;
+ 
     }
 
     .curso:nth-child(2n) {
@@ -414,9 +445,10 @@
       display: none;
     }
 
-    .proyecto_info, .imagen_proyecto {
-      max-width: 100%;
-      margin: 15px 0;
+    .imagen_proyecto {
+      max-width: 70%;
+      margin-top: 41%;
+      right: 12%;
     }
   }
 
