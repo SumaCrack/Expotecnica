@@ -346,6 +346,19 @@
       width: 80%;
       margin-bottom: 1rem;
     }
+    
+  .info-section {
+    max-width: 300px;
+
+  }
+  .titulo_info {
+    font-size: 2em;
+   
+  }
+  .texto_info {
+    font-size: 0.9em;
+
+  }
 
     .carousel h2 {
       font-size: 2.5em;
@@ -356,7 +369,7 @@
     }
 
     .carrusel-list {
-      width: 400px;
+      width: 330px;
       height: 250px;
     }
 

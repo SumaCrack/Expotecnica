@@ -267,8 +267,6 @@ html {
 
   .contenido_texto_obj h2 {
     font-size: 3rem;
- 
-    margin-bottom: %;
   }
 
   .contenido_texto_obj p {
@@ -366,7 +364,9 @@ html {
     .imagen_robot, .contenido_texto_obj {
       max-width: 100%;
     }
-
+    .contenido_texto_obj p {
+      font-size: 1rem;
+    }
     .contenido_texto_obj h2 {
       font-size: 2rem;
     }
